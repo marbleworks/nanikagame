@@ -1,31 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>言語によるリダイレクト</title>
-  <style>
-    /* ページがちらつかないようにbodyを非表示にしています */
-    body {
-      display: none;
-    }
-  </style>
-  <script>
-    // ユーザーの言語設定を取得
-    var userLang = navigator.language || navigator.userLanguage;
-    // 言語が "ja" で始まる場合は日本語ページへ、それ以外は英語ページへリダイレクト
-    if (userLang.toLowerCase().startsWith("ja")) {
-      window.location.href = "./ja/index.html";
-    } else {
-      window.location.href = "./en/index.html";
-    }
-  </script>
 </head>
 <body>
     <p>Nanika Game Online</p>
-  <!-- JavaScriptが無効な場合のメッセージ -->
-  <noscript>
-    <p>このサイトを正しく表示するには、JavaScriptを有効にしてください。</p>
-  </noscript>
 </body>
 </html>
