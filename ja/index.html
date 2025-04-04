@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nanika Game Online - 新感覚オンライン落ちものパズルゲーム</title>
+  <link rel="icon" href="/favicon.ico">
+  <style>
+    /* リセット＆基本設定 */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #34495e;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* ヘッダー＆ナビゲーション */
+    header {
+      background: #34495e;
+      color: #fff;
+      padding: 10px 0 10px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      height: 40px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    img {
+      height: 20px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 15px;
+    }
+    .nav-links li a {
+      color: #fff;
+      font-weight: bold;
+    }
+    .cta-btn {
+      background: #e74c3c;
+      padding: 6px 20px;
+      border-radius: 10px;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    /* ヒーローセクション */
+    .hero {
+      background: url('/img/hero.png') no-repeat center center/cover;
+      height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin-top: 60px; /* ヘッダー分の余白 */
+    }
+    .hero-content {
+      position: relative;
+      color: #fff;
+      text-align: center;
+    }
+    .hero-content img {
+        width: 600px; /* 必要に応じて幅を調整 */
+        height: auto;
+    }
+    .hero-content p {
+      font-size: 1.5em;
+      margin: 10px 0;
+    }
+    .btn-primary {
+      background: #e74c3c;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 0px;
+      color: #fff;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
+
+    .image-container {
+      display: flex; /* 横並びにする */
+      gap: 10px;     /* 画像間に隙間を設定（オプション） */
+    }
+    .image-container img {
+      /* 必要に応じてサイズやスタイルを調整 */
+      width: 100px;
+      height: auto;
+    }
+
+    /* セクション共通 */
+    section {
+      padding: 80px 60px;
+    }
+    .section-title {
+      text-align: left;
+      margin-bottom: 40px;
+      font-size: 2em;
+    }
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .card {
+      background: #ecf0f1;
+      padding: 20px;
+      border-radius: 0px;
+      width: calc(33% - 40px);
+      text-align: center;
+    }
+    .card img {
+      max-width: 64px;
+      height: 64px;
+      border-radius: 5px;
+    }
+
+    /* フッター */
+    .footer {
+      background: #34495e;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    .social-links {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    .social-links li a {
+      color: #fff;
+    }
+    
+    /* レスポンシブ対応 */
+    @media (max-width: 768px) {
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+      .card {
+        width: 80%;
+      }
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ヘッダー＆ナビゲーション -->
+  <header>
+    <nav>
+        <img src="/img/logo.png" alt="Nanika Game Online">
+      <ul class="nav-links">
+        <li><a href="#overview">ゲーム概要</a></li>
+        <li><a href="#nanika">ナニカ</a></li>
+        <li><a href="#classes">クラス</a></li>
+        <li><a href="#modes">ゲームモード</a></li>
+        <li><a href="#skins">スキン</a></li>
+        <li><a href="#news">ニュース</a></li>
+      </ul>
+      <a href="https://store.steampowered.com/app/2952070" class="cta-btn">今すぐ無料プレイ</a>
+    </nav>
+  </header>
+
+  <!-- ヒーローセクション -->
+  <section class="hero">
+    <div class="hero-content">
+      <img src="/img/logo.png" alt="Nanika Game Online">
+      <p>新感覚オンライン落ちものパズルゲーム</p>
+      <a href="https://store.steampowered.com/app/2952070" class="btn-primary">今すぐ無料プレイ</a>
+    </div>
+</section>
+
+  <!-- ゲーム概要セクション -->
+  <section id="overview">
+    <h2 class="section-title">ゲーム概要</h2>
+    <p>
+      『ナニカゲームオンライン』は、66種類の多彩なナニカと6つの個性的なクラス、そして多様なゲームモードで構成された新感覚オンライン落ちものパズルゲームです。戦略性豊かなゲームプレイを体験し、仲間と共に頂点を目指しましょう。
+    </p>
+    <!-- プロモーション動画の埋め込み例 -->
+    <div style="text-align:center; margin-top:20px;">
+      <iframe width="560" height="315" src="https://video.fastly.steamstatic.com/store_trailers/257115960/movie480_vp9.webm?t=1742599348" title="プロモーション動画" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- ナニカ紹介セクション -->
+  <section id="nanika">
+    <h2 class="section-title">ナニカ</h2>
+    <p>
+        『ナニカゲームオンライン』には、66種類の多彩なナニカが登場。各ナニカは固有のスキルを持ち、融合によって強力な形へと進化します。プレイヤーは11段階のナニカを組み合わせたデッキを作成し、そのユニークな組み合わせにより幅広い戦略を展開します。
+    </p>
+    <div class="image-container">
+        <img class="random-image" data-images="/img/nanikas/cherry.png,/img/nanikas/blueberry.png,/img/nanikas/plum.png,/img/nanikas/green_pea.png,/img/nanikas/soybean.png,/img/nanikas/adzuki_bean.png" src="image1a.jpg" alt="image1">
+        <img class="random-image" data-images="/img/nanikas/strawberry.png,/img/nanikas/lychee.png,/img/nanikas/raspberries.png,/img/nanikas/mushroom.png,/img/nanikas/almond.png,/img/nanikas/mint.png" src="image2a.jpg" alt="image2">
+        <img class="random-image" data-images="/img/nanikas/grapes.png,/img/nanikas/kiwi.png,/img/nanikas/blackberries.png,/img/nanikas/tomato.png,/img/nanikas/ginger.png,/img/nanikas/green_pepper.png" src="image3a.jpg" alt="image3">
+        <img class="random-image" data-images="/img/nanikas/lemon.png,/img/nanikas/lime.png,/img/nanikas/persimmon.png,/img/nanikas/carrot.png,/img/nanikas/asparagus.png,/img/nanikas/yellow_pepper.png" src="image4a.jpg" alt="image4">
+        <img class="random-image" data-images="/img/nanikas/orange.png,/img/nanikas/avocado.png,/img/nanikas/fig.png,/img/nanikas/cucumber.png,/img/nanikas/okra.png,/img/nanikas/red_pepper.png" src="image5a.jpg" alt="image5">
+        <img class="random-image" data-images="/img/nanikas/apple.png,/img/nanikas/green_apple.png,/img/nanikas/grapefruit.png,/img/nanikas/potato.png,/img/nanikas/garlic.png,/img/nanikas/chili_pepper.png" src="image6a.jpg" alt="image6">
+        <img class="random-image" data-images="/img/nanikas/pear.png,/img/nanikas/banana.png,/img/nanikas/pomegranates.png,/img/nanikas/onion.png,/img/nanikas/brinjal.png,/img/nanikas/wasabi.png" src="image7a.jpg" alt="image7">
+        <img class="random-image" data-images="/img/nanikas/peach.png,/img/nanikas/dragon_fruit.png,/img/nanikas/guava.png,/img/nanikas/corn.png,/img/nanikas/beetroot.png,/img/nanikas/bamboo_shoot.png" src="image8a.jpg" alt="image8">
+        <img class="random-image" data-images="/img/nanikas/pineapple.png,/img/nanikas/mango.png,/img/nanikas/passion_fruit.png,/img/nanikas/broccoli.png,/img/nanikas/radish.png,/img/nanikas/cauliflower.png" src="image9a.jpg" alt="image9">
+        <img class="random-image" data-images="/img/nanikas/melon.png,/img/nanikas/coconut.png,/img/nanikas/mangosteen.png,/img/nanikas/lettuce.png,/img/nanikas/cabbage.png,/img/nanikas/red_cabbage.png" src="image10a.jpg" alt="image10">
+        <img class="random-image" data-images="/img/nanikas/watermelon.png,/img/nanikas/durian.png,/img/nanikas/papaya.png,/img/nanikas/pumpkin.png,/img/nanikas/sweet_potato.png,/img/nanikas/turnip.png" src="image11a.jpg" alt="image11">
+      </div>
+    <!-- <div class="cards">
+      <div class="card">
+        <img src="https://via.placeholder.com/150" alt="ナニカ1">
+        <h3>ナニカ1</h3>
+        <p>固有スキル説明</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/150" alt="ナニカ2">
+        <h3>ナニカ2</h3>
+        <p>固有スキル説明</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/150" alt="ナニカ3">
+        <h3>ナニカ3</h3>
+        <p>固有スキル説明</p>
+      </div>
+    </div> -->
+  </section>
+
+  <!-- クラス紹介セクション -->
+  <section id="classes">
+    <h2 class="section-title">クラス</h2>
+    <p>
+      6つの個性的なクラスがあなたの戦略をサポートします。状況に応じて瞬時に判断し、最適なタイミングでスキルを発動することで戦いを有利に進めましょう。
+    </p>
+    <div class="cards">
+      <div class="card">
+        <img src="/img/classes/alchemist.png" alt="アルケミスト">
+        <h3>アルケミスト</h3>
+        <p>状態異常や持続ダメージで敵を制圧</p>
+      </div>
+      <div class="card">
+        <img src="/img/classes/engineer.png" alt="エンジニア">
+        <h3>エンジニア</h3>
+        <p>ナニカを操るスキルで戦局を掌握</p>
+      </div>
+      <div class="card">
+        <img src="/img/classes/guardian.png" alt="ガーディアン">
+        <h3>ガーディアン</h3>
+        <p>高い防御力で仲間を守る</p>
+      </div>
+      <div class="card">
+        <img src="/img/classes/mage.png" alt="メイジ">
+        <h3>メイジ</h3>
+        <p>回復と魔法攻撃で戦況を変化させる</p>
+      </div>
+      <div class="card">
+        <img src="/img/classes/ninja.png" alt="忍者">
+        <h3>忍者</h3>
+        <p>高速移動と透明化で敵を翻弄</p>
+      </div>
+      <div class="card">
+        <img src="/img/classes/warrior.png" alt="戦士">
+        <h3>戦士</h3>
+        <p>圧倒的な攻撃力で近接戦を制する</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ゲームモード＆ランク・プレイスタイルセクション -->
+  <section id="modes">
+    <h2 class="section-title">ゲームモード</h2>
+    <p>
+      4種類のゲームモードで、初心者から上級者まで幅広く楽しめる対戦が可能です。
+    </p>
+    <div class="cards">
+        <div class="card">
+          <img src="/img/gamemodes/unranked.png" alt="アンランクモードのアイコン">
+          <h3>アンランクモード</h3>
+          <p>ランク変動がないため、初心者でも気軽に遊べる</p>
+        </div>
+        <div class="card">
+          <img src="/img/gamemodes/ranked.png" alt="ランクモードのアイコン">
+          <h3>ランクモード</h3>
+          <p>勝敗でランクが変動し、実力が評価される</p>
+        </div>
+        <div class="card">
+          <img src="/img/gamemodes/mirror.png" alt="ミラーモードのアイコン">
+          <h3>ミラーモード</h3>
+          <p>同じデッキで実力勝負ができる</p>
+        </div>
+        <div class="card">
+          <img src="/img/gamemodes/custom.png" alt="カスタムモードのアイコン">
+          <h3>カスタムモード</h3>
+          <p>友達と対戦できる</p>
+        </div>
+      </div>
+  </section>
+
+  <!-- スキン＆カスタマイズセクション -->
+  <section id="skins">
+    <h2 class="section-title">スキン＆カスタマイズ</h2>
+    <p>
+        多彩なスキンであなたの個性を引き立てましょう。ここでは、あなた好みのカスタマイズが見つかります。
+    </p>
+    <div class="cards">
+      <div class="card">
+        <img src="/img/skin/icon.png" alt="スキン1">
+        <h3>アイコン</h3>
+      </div>
+      <div class="card">
+        <img src="/img/skin/player_skin.png" alt="スキン2">
+        <h3>プレイヤースキン</h3>
+      </div>
+      <div class="card">
+        <img src="/img/skin/ground.png" alt="スキン3">
+        <h3>地面</h3>
+      </div>
+      <div class="card">
+        <img src="/img/skin/background.png" alt="スキン3">
+        <h3>背景</h3>
+      </div>
+      <div class="card">
+        <img src="/img/skin/banner.png" alt="スキン3">
+        <h3>バナー</h3>
+      </div>
+      <div class="card">
+        <img src="/img/skin/combo_banner.gif" alt="スキン3">
+        <h3>コンボバナー</h3>
+      </div>
+      <div class="card">
+        <img src="/img/skin/stamp.png" alt="スキン3">
+        <h3>スタンプ</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- ニュース＆アップデートセクション -->
+  <section id="news">
+    <h2 class="section-title">ニュース＆アップデート</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>ニュース</h3>
+        <p>新たな情報があればこちらに掲載します。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <ul class="social-links">
+      <li><a href="https://x.com/nanika_game"><img src="/img/social/x.png" alt="x"></a></li>
+      <li><a href="https://discord.gg/KRqNec7N"><img src="/img/social/discord.png" alt="discord"></a></li>
+      <li><a href="https://www.youtube.com/@marbleworks9106"><img src="/img/social/youtube.png" alt="youtube"></a></li>
+    </ul>
+    <p>Marble Works - Nanika Game Online</p>
+    <p>
+      <a href="privacy_policy.html" style="color: #fff;">プライバシーポリシー</a> | 
+      <a href="terms_of_service.html" style="color: #fff;">利用規約</a>
+    </p>
+  </footer>
+
+</body>
+<script>
+    function changeImageRandomly(imgElement) {
+      const imageList = imgElement.getAttribute('data-images').split(',');
+      const randomIndex = Math.floor(Math.random() * imageList.length);
+      const newImage = imageList[randomIndex];
+      imgElement.src = newImage;
+      imgElement.alt = `image - ${newImage}`;
+
+      const randomDelay = Math.random() * 4000 + 1000; // 1000ms ～ 5000ms
+      setTimeout(() => {
+        changeImageRandomly(imgElement);
+      }, randomDelay);
+    }
+
+    const imgElements = document.querySelectorAll('.random-image');
+    imgElements.forEach(img => {
+      changeImageRandomly(img);
+    });
+</script>
+</html>
