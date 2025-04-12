@@ -1,27 +1,37 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirect</title>
+  <title>Redirecting...</title>
+  <!-- Prevent search engines from indexing the redirect page -->
+  <meta name="robots" content="noindex, follow">
   <style>
+    /* Hide content until redirection occurs */
     body {
       display: none;
     }
   </style>
   <script>
-    var userLang = navigator.language || navigator.userLanguage;
-    if (userLang.toLowerCase().startsWith("ja")) {
-      window.location.href = "ja/";
-    } else {
-      window.location.href = "en/";
-    }
+    // Redirect based on the user's browser language settings
+    (function() {
+      var userLang = navigator.language || navigator.userLanguage;
+      if (userLang.toLowerCase().startsWith("ja")) {
+        window.location.href = "ja/";
+      } else {
+        window.location.href = "en/";
+      }
+    })();
   </script>
 </head>
 <body>
-    <p>Nanika Game Online</p>
   <noscript>
-    <p>Enable JavaScript.</p>
+    <!-- Alternative content for browsers with disabled JavaScript -->
+    <p>JavaScript is disabled. Please use the following links to access the site:</p>
+    <ul>
+      <li><a href="ja/">Japanese Version</a></li>
+      <li><a href="en/">English Version</a></li>
+    </ul>
   </noscript>
 </body>
 </html>
